@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>V4: Advanced Todo List</title>
+    <link rel="stylesheet" href="todos.css" />
+    <script src="todos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  </head>
+  <body>
+    <h1>Todos</h1>
+    <div class="wrapper">
+      <form id="new-todo-form">
+        <div><label for="todo-input">New Todo</label></div>
+        <input type="text" id="todo-input" />
+        <button type="submit">Add Todo</button>
+      </form>
+
+      <!-- Todo list will appear here -->
+
+      <template id="list-item-template">
+        <li class="list-item" data-list-item>
+          <span data-list-item-text></span>
+          <button data-button-edit>Edit</button>
+          <button data-button-complete>Complete</button>
+          <button data-button-delete>Delete</button>
+        </li>
+      </template>
+    </div>
+  </body>
+</html>

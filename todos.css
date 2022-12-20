@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    line-height: 1.3;
+}
+
+h1 {
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+#new-todo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-todo-form > * {
+    margin: 0.15rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    font-size: inherit;
+}
+
+#list {
+    padding: 0;
+}
+
+.list-item {
+    list-style: none;
+    display: flex;
+    background: #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: move;
+}
+
+[data-button-edit] {
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+[data-button-delete] {
+    margin-left: 0.5rem;
+}
+
+button {
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0.5rem;
+}
+
+[data-list-item-text] {
+    min-width: 600px;
+}
+
+[data-list-item-text][contenteditable] {
+    background: white;
+    cursor: default;
+}
+
+[data-list-item-text][contenteditable]:focus {
+    background: black;
+    color: white;
+    cursor: default;
+}
+
+.complete [data-list-item-text] {
+    text-decoration: line-through;
+}
