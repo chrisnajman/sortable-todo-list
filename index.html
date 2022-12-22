@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>V4: Advanced Todo List</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="todos.css" />
     <script src="todos.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
   </head>
   <body>
-    <h1>To-do List</h1>
-    <div class="wrapper">
+    <header class="wrapper"><h1>To-do List</h1></header>
+    <main class="wrapper main">
       <form id="new-todo-form" class="new-todo-form">
         <div><label for="todo-input">New Todo</label></div>
         <div class="input-button-wrap">
@@ -31,6 +31,31 @@
           </div>
         </li>
       </template>
-    </div>
+    </main>
+    <footer class="wrapper">
+      <ul>
+        <li>
+          <a
+            href="https://github.com/chrisnajman/sortable-todo-list"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Source Code (Github)</a
+          >
+        </li>
+        <li>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            >Demo (Git Pages)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://stackoverflow.com/questions/74864907/sortable-to-do-list-saves-to-local-storage-but-item-order-changes-after-to-do-is"
+            target="_blank"
+            rel="noopener noreferrer"
+            >As yet unanswered question (Stack Overflow)</a
+          >
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

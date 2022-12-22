@@ -2,25 +2,26 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-size: 1rem;
     font-family: sans-serif;
     line-height: 1.3;
+    padding-bottom: 2rem;
 }
 
 @media screen and (min-width: 1280px) {
     body {
         font-size: 1.3rem;
+        padding-bottom: 5rem;
     }
 }
 
 h1 {
     text-align: center;
-}
-
-.wrapper {
-    max-width: 1320px;
-    margin: 0 auto;
 }
 
 button {
@@ -33,6 +34,11 @@ button {
     background: white;
     border: 1px solid currentColor;
     border-radius: 0.2rem;
+}
+
+.wrapper {
+    max-width: 1320px;
+    margin: 0 auto;
 }
 
 /** FORM **/
@@ -52,7 +58,7 @@ button {
     gap: 0.5rem;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 370px) {
     .form-buttons {
         flex-direction: row;
         align-items: unset;
@@ -88,6 +94,7 @@ button {
 /** LIST **/
 .list {
     padding: 0;
+    margin-bottom: 10rem;
 }
 
 .list-item {
@@ -103,7 +110,7 @@ button {
     width: 100%;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 370px) {
     .list-item {
         padding: 1rem;
     }
@@ -119,13 +126,13 @@ button {
 
 /* Todo buttons and text */
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 370px) {
     .btn-edit {
         min-width: 10ch;
     }
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 370px) {
     .btn-complete {
         min-width: 12ch;
     }
@@ -135,7 +142,7 @@ button {
     text-decoration: line-through;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 370px) {
     .btn-delete {
         min-width: 12ch;
     }
