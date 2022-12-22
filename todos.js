@@ -1,7 +1,10 @@
 const form = document.querySelector("#new-todo-form")
 const todoInput = document.querySelector("#todo-input")
-const list = document.createElement("ul")
 const template = document.querySelector("#list-item-template")
+
+const list = document.createElement("ul")
+list.classList.add("list")
+list.setAttribute("id", "list")
 
 const LOCAL_STORAGE_PREFIX = "SORTABLE-TODO-LIST"
 const TODOS_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-todos`
@@ -9,7 +12,6 @@ const TODOS_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-todos`
 let todos = loadTodos()
 todos.forEach((todo) => renderTodo(todo))
 
-list.setAttribute("id", "list")
 form.after(list)
 
 form.addEventListener("submit", (e) => {
@@ -42,7 +44,7 @@ function renderTodo(x) {
     ? (completeBtnText.innerText = "Uncomplete")
     : (completeBtnText.innerText = "Complete")
 
-  listItem.classList.toggle("complete", x.complete)
+  listItem.classList.toggle("js-complete", x.complete)
 
   list.appendChild(templateClone)
 }
@@ -86,13 +88,13 @@ list.addEventListener("click", (e) => {
 
   const parent = e.target.closest(".list-item")
 
-  parent.classList.toggle("complete")
+  parent.classList.toggle("js-complete")
 
   const todoId = parent.dataset.todoId
   const todo = todos.find((t) => {
     return t.id === todoId
   })
-  todo.complete = parent.classList.contains("complete")
+  todo.complete = parent.classList.contains("js-complete")
 
   saveTodos()
 })

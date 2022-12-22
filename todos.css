@@ -3,9 +3,15 @@
 }
 
 body {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: sans-serif;
     line-height: 1.3;
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        font-size: 1.3rem;
+    }
 }
 
 h1 {
@@ -13,67 +19,149 @@ h1 {
 }
 
 .wrapper {
-    max-width: 1280px;
+    max-width: 1320px;
     margin: 0 auto;
 }
 
-#new-todo-form {
+button {
+    cursor: pointer;
+    text-align: center;
+    padding: 0.57rem;
+    font-size: inherit;
+    text-align: center;
+    color: currentColor;
+    background: white;
+    border: 1px solid currentColor;
+    border-radius: 0.2rem;
+}
+
+/** FORM **/
+.new-todo-form {
     display: flex;
     flex-direction: column;
+}
+
+.form-buttons {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+@media screen and (min-width: 320px) {
+    .form-buttons {
+        flex-direction: row;
+        align-items: unset;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .form-buttons {
+        margin-right: 0;
+    }
+}
+
+.input-button-wrap {
+    display: flex;
+}
+
+.input-button-wrap input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: inherit;
+}
+.input-button-wrap button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    background: #e9e9e9;
 }
 
 #new-todo-form > * {
     margin: 0.15rem;
 }
 
-input[type="text"] {
-    padding: 0.5rem;
-    font-size: inherit;
-}
-
-#list {
+/** LIST **/
+.list {
     padding: 0;
 }
 
 .list-item {
     list-style: none;
     display: flex;
-    background: #ccc;
-    padding: 1rem;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    background: #e9e9e9;
+    padding: 1rem 0;
     margin-bottom: 1rem;
     cursor: move;
+    width: 100%;
 }
 
-[data-button-edit] {
-    margin-left: auto;
-    margin-right: 0.5rem;
+@media screen and (min-width: 320px) {
+    .list-item {
+        padding: 1rem;
+    }
 }
 
-[data-button-delete] {
-    margin-left: 0.5rem;
+@media screen and (min-width: 990px) {
+    .list-item {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
 }
 
-button {
-    cursor: pointer;
-    font-size: inherit;
-    padding: 0.5rem;
+/* Todo buttons and text */
+
+@media screen and (min-width: 320px) {
+    .btn-edit {
+        min-width: 10ch;
+    }
 }
 
-[data-list-item-text] {
-    min-width: 600px;
+@media screen and (min-width: 320px) {
+    .btn-complete {
+        min-width: 12ch;
+    }
 }
 
-[data-list-item-text][contenteditable] {
+.js-complete [data-list-item-text] {
+    text-decoration: line-through;
+}
+
+@media screen and (min-width: 320px) {
+    .btn-delete {
+        min-width: 12ch;
+    }
+}
+
+.text {
+    margin: 0 0 1rem 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 60ch;
+}
+
+@media screen and (min-width: 990px) {
+    .text {
+        margin: 0;
+    }
+}
+
+.text[contenteditable] {
     background: white;
     cursor: default;
 }
 
-[data-list-item-text][contenteditable]:focus {
+.text[contenteditable]:focus {
     background: black;
     color: white;
     cursor: default;
-}
-
-.complete [data-list-item-text] {
-    text-decoration: line-through;
 }
